@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Predicción de Enfermedad Cardíaca</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+        <h1>Predicción de Enfermedad Cardíaca</h1>
+
+        <form method="POST" class="form-grid">
+            
+            <div class="form-row">
+                <label>Edad</label>
+                <input type="number" name="Age" required>
+            </div>
+
+            <div class="form-row">
+                <label>Sexo</label>
+                <select name="Sex">
+                    <option value="M">Masculino</option>
+                    <option value="F">Femenino</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label>Tipo de Dolor Torácico</label>
+                <select name="ChestPainType">
+                    <option value="ATA">ATA</option>
+                    <option value="NAP">NAP</option>
+                    <option value="ASY">ASY</option>
+                    <option value="TA">TA</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label>Presión Arterial en Reposo</label>
+                <input type="number" name="RestingBP" required>
+            </div>
+
+            <div class="form-row">
+                <label>Colesterol</label>
+                <input type="number" name="Cholesterol" required>
+            </div>
+
+            <div class="form-row">
+                <label>Glucemia en ayunas</label>
+                <select name="FastingBS">
+                    <option value="0">Mayor a 120 mg/dL</option>
+                    <option value="1">Menor o igual a 120 mg/dL  </option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label>ECG en Reposo</label>
+                <select name="RestingECG">
+                    <option value="Normal">Normal</option>
+                    <option value="ST">ST</option>
+                    <option value="LVH">LVH</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label>Frecuencia Máxima (MaxHR)</label>
+                <input type="number" name="MaxHR" required>
+            </div>
+
+            <div class="form-row">
+                <label>Angina por Ejercicio</label>
+                <select name="ExerciseAngina">
+                    <option value="N">No</option>
+                    <option value="Y">Sí</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label>Oldpeak</label>
+                <input type="number" step="0.1" name="Oldpeak" required>
+            </div>
+
+            <div class="form-row">
+                <label>ST Slope</label>
+                <select name="ST_Slope">
+                    <option value="Up">Up</option>
+                    <option value="Flat">Flat</option>
+                    <option value="Down">Down</option>
+                </select>
+            </div>
+
+            <div class="form-footer">
+                <button type="submit" class="btn">Predecir</button>
+            </div>
+
+        </form>
+
+        {% if resultado %}
+            <div class="resultado">
+                {{ resultado }}
+            </div>
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+</html>
