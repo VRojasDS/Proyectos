@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<a href="/">Enfermedad al corazón</a>
+<a href="{{ url_for('stock') }}">Acciones de NVIDIA</a>
+<head>
+    <title>Predicción de Precio de Autos</title>
+</head>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles3.css') }}">
+<body>
+    <h2>Ingrese los detalles del auto</h2>
+    <form method="post">
+        Present Price: <input type="text" name="Present_Price" required><br>
+        Kms Driven: <input type="text" name="Kms_Driven" required><br>
+        Owner: <input type="text" name="Owner" required><br>
+
+        Tipo de gasolina:<br>
+        <select name="Fuel_Type" required>
+            <option value="Petrol">Petróleo</option>
+            <option value="Diesel">Diesel</option>
+            <option value="CNG">GNC</option>
+        </select><br>
+
+        Tipo de vendedor:<br>
+        <select name="Seller_Type" required>
+            <option value="Dealer">Distribuidor</option>
+            <option value="Individual">Individual</option>
+        </select><br>
+
+        Transmisión:<br>
+        <select name="Transmission" required>
+            <option value="Manual">Manual</option>
+            <option value="Automatic">Automáticp</option>
+        </select><br>
+
+        Años activo: <input type="text" name="No_of_years" required><br><br>
+
+        <input type="submit" value="Predecir">
+    </form>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>

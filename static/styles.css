@@ -1,0 +1,119 @@
+/* Asegúrate de que los labels estén alineados arriba */
+.form-row label {
+    display: block; /* Esto hace que las etiquetas se muestren como bloques, alineándolas verticalmente */
+    margin-bottom: 8px; /* Espacio entre el label y el input */
+    font-weight: bold; /* Opcional, para resaltar las etiquetas */
+}
+
+/* Estilo para los inputs y selects */
+.form-row input,
+.form-row select {
+    width: 100%; /* Hace que los inputs y selects se adapten al ancho del contenedor */
+    padding: 8px;
+    margin-bottom: 16px; /* Separación entre los campos */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Opcional: agregar márgenes en los inputs o selects para mayor separación */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    gap: 20px;
+}
+
+
+/* Fuente y fondo */
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f6fa;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Centrado de todo el contenido */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Tarjeta */
+.card {
+    background: white;
+    padding: 40px;
+    width: 700px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.card h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 26px;
+    color: #2c3e50;
+}
+
+/* GRID de formulario */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* DOS columnas */
+    gap: 22px 30px;                   /* espacio filas / columnas */
+}
+
+/* Cada pregunta ocupa una fila completa en 2 columnas alineadas */
+.form-row {
+    display: grid;
+    grid-template-columns: 40% 60%;   /* etiqueta / input */
+    align-items: center;
+}
+
+/* Estilo de labels */
+.form-row label {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Inputs y selects */
+.form-row input,
+.form-row select {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccd1d9;
+    font-size: 14px;
+}
+
+/* Footer del formulario (botón centrado) */
+.form-footer {
+    grid-column: 1 / span 2;  /* ocupa las dos columnas */
+    margin-top: 10px;
+}
+
+/* Botón */
+.btn {
+    width: 100%;
+    padding: 14px;
+    background: #3498db;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #2980b9;
+}
+
+/* Resultado */
+.resultado {
+    margin-top: 30px;
+    padding: 18px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    background: #ecf0f1;
+    color: #2c3e50;
+}
